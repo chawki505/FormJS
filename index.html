@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Formulaire </title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+	<h1>Inscription</h1>
+	<fieldset>
+		<legend>
+			<h2>Information personnelles</h2></legend>
+		<form class="InformationPersonelles" action="index.html" method="post">
+
+			<div class="lvl0">
+				<br>Civilité: <br>
+				<select id="civilite" name="civilite" onfocus="testChampSelect('civilite','civiliteMsg')" onchange="testChampSelect('civilite','civiliteMsg')">
+          <option value="" selected>Selectionnez votre civilité</option>
+          <option value=""> Mr.</option>
+          <option value=""> Mme.</option>
+     </select>
+				<label id="civiliteMsg" class="border"> Vous devez selectionnez votre civilité</label>
+			</div>
+
+			<br>
+
+			<div class="lvl1">
+				Nom: <br>
+				<input id="nom" type="text" name="nom" size="50" onfocus="testChampCaractere('nom','nomMsg')" onkeyup="testChampCaractere('nom','nomMsg')">
+				<label id="nomMsg" class="border"> Un nom ne peut pas contenir moins de 2 caractere</label>
+			</div>
+
+			<br>
+
+			<div class="lvl2">
+				Prenom: <br>
+				<input id="prenom" type="text" name="prenom" size="50" onfocus="testChampCaractere('prenom','prenomMsg')" onkeyup="testChampCaractere('prenom','prenomMsg')">
+				<label id="prenomMsg" class="border "> Un prenom ne peut pas contenir moins de 2 caractere</label>
+			</div>
+
+			<br>
+
+			<div class="lvl3">
+				Age: <br>
+				<input id="age" type="text" name="age" size="50" onfocus="testChampAge('age','ageMsg')" onkeyup="testChampAge('age','ageMsg')">
+				<label id="ageMsg" class="border"> L'age dois etre compris entre 5 et 100</label>
+			</div>
+
+			<br>
+
+			<div class="lvl4">
+				Email: <br>
+				<input id="email" type="text" name="email" size="50" onfocus="validateEmail('email','emailMsg')" onkeyup="validateEmail('email','emailMsg')">
+				<label id="emailMsg" class="border"> L'email doit etre valide </label>
+			</div>
+
+			<br>
+
+			<div class="lvl5">
+				Pays: <br>
+				<select id="pays" name="pays" onfocus="testChampSelect('pays','paysMsg')" onchange="testChampSelect('pays','paysMsg')">
+    <option value=" " selected>Selectionnez votre pays</option>
+    <option value=" ">Algerie</option>
+    <option value=" ">France</option>
+    <option value=" ">Espagne</option>
+    <option value=" ">Autre</option>
+  </select>
+				<label id="paysMsg" class="border"> Vous devez selectioner votre pays de residence</label>
+			</div>
+
+		</form>
+		<br>
+	</fieldset>
+
+
+	<br><br>
+
+
+	<fieldset>
+		<legend>
+			<h2>Information de connexion</h2></legend>
+		<form class="informationConnexion" action="index.html" method="post">
+
+			<div class="lvl0">
+				<br> Pseudo: <br>
+				<input id="pseudo" type="text" name="pseudo" size="50" onfocus="testPseudo('pseudo','pseudoMsg')" onkeyup="testPseudo('pseudo','pseudoMsg')">
+				<label id="pseudoMsg" class="border"> Le pseudo ne peut pas contenir moins de 4 caractere </label>
+			</div>
+
+			<br>
+
+			<div class="lvl1">
+				Mot de passe : <br>
+				<input type="password" id="mdp1" name="mdp1" required size="50" onfocus="testMotDePasse('mdp1','mdp1Msg')" onkeyup="testMotDePasse('mdp1','mdpMsg')">
+				<label id="mdp1Msg" class="border"> Le mot de passe ne dois pas contenir moins de 6 caractere </label>
+			</div>
+
+			<br>
+
+			<div class="lvl2">
+				Confirmer votre mot de passe : <br>
+				<input type="password" id="mdp2" name="mdp2" required size="50" onfocus="testValideMotDePasse('mdp1','mdp1Msg','mdp2','mdp2Msg')" onkeyup="testValideMotDePasse('mdp1','mdp1Msg','mdp2','mdp2Msg')">
+				<label id="mdp2Msg" class="border"> Le mot de passe de confirmation doit etre identique a celui d'origine </label>
+			</div>
+
+		</form>
+		<br>
+	</fieldset>
+	<br>
+
+	<form class="autre" action="index.html " method="post" onsubmit="return submitForm()">
+
+		<div class="lvl1">
+			<input type="checkbox" name=" "> je desire recevoir la newsletter chaque mois
+		</div>
+
+		<br>
+
+		<div class="lvl2">
+			<button type="submit" name="button">Envoyer</button>
+			<button type="button" name="button" onclick="resetForm()">Réinitialiser le formulaire</button>
+		</div>
+	</form>
+
+
+
+
+	<script src='script.js'>
+	</script>
+</body>
+
+</html>
